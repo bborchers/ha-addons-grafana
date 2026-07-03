@@ -13,3 +13,4 @@ Dieses Repo baut bei jedem veröffentlichten [Release](https://github.com/bborch
 3. Draft-Release veröffentlichen → löst Build, GHCR-Push und Sync mit `ha-addons` aus
 
 Siehe [grafana/DOCS.md](grafana/DOCS.md) für die Addon-Dokumentation und [grafana/CHANGELOG.md](grafana/CHANGELOG.md) für die Versionshistorie.
+
