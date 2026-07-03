@@ -2,7 +2,7 @@
 
 Build repo for the Grafana Home Assistant add-on.
 
-This repo automatically builds a multi-arch image on every published [release](https://github.com/bborchers/ha-addons-grafana/releases) and pushes it to `ghcr.io/bborchers/grafana`. The central repository [ha-addons](https://github.com/bborchers/ha-addons) is then automatically notified of the new version.
+This repo automatically builds a multi-arch image on every published [release](https://github.com/bborchers/ha-addons-grafana/releases) and pushes it to `ghcr.io/bborchers/ha-addons-grafana`. The central repository [ha-addons](https://github.com/bborchers/ha-addons) is then automatically notified of the new version.
 
 **To install in Home Assistant, please use [ha-addons](https://github.com/bborchers/ha-addons)**, not this repo directly — this repo is for building the image, not for distribution.
 
