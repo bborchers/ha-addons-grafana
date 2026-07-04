@@ -45,6 +45,28 @@ Sets `GF_SERVER_ROOT_URL`. The full URL used to access Grafana from a browser, e
 
 Sets `GF_SERVER_DOMAIN`. The domain name Grafana is served from, e.g. `grafana.example.com`. Optional, not set by default.
 
+### SSL options
+
+Enables HTTPS using the certificate/key pair from Home Assistant's `/ssl` directory (the same directory managed under Settings → Add-ons → your certificate add-on, e.g. Let's Encrypt).
+
+```yaml
+ssl: true
+certfile: fullchain.pem
+keyfile: privkey.pem
+```
+
+#### Option: `ssl`
+
+Enables HTTPS. When `true`, sets `GF_SERVER_PROTOCOL=https`, `GF_SERVER_CERT_FILE=/ssl/<certfile>`, and `GF_SERVER_CERT_KEY=/ssl/<keyfile>`. Default: `false`.
+
+#### Option: `certfile`
+
+Filename of the certificate file inside Home Assistant's `/ssl` directory. Default: `fullchain.pem`.
+
+#### Option: `keyfile`
+
+Filename of the private key file inside Home Assistant's `/ssl` directory. Default: `privkey.pem`.
+
 ### SMTP options
 
 These options configure Grafana's built-in email sender (used for alert notifications, invites, and password resets). All fields except `smtp_enabled` are optional; only set the ones you need.

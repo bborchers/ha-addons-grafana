@@ -32,6 +32,14 @@ if bashio::config.has_value 'domain'; then
     export GF_SERVER_DOMAIN="$(bashio::config 'domain')"
 fi
 
+if bashio::config.true 'ssl'; then
+    CERTFILE=$(bashio::config 'certfile')
+    KEYFILE=$(bashio::config 'keyfile')
+    export GF_SERVER_PROTOCOL="https"
+    export GF_SERVER_CERT_FILE="/ssl/${CERTFILE}"
+    export GF_SERVER_CERT_KEY="/ssl/${KEYFILE}"
+fi
+
 SMTP_ENABLED=$(bashio::config 'smtp_enabled')
 export GF_SMTP_ENABLED="${SMTP_ENABLED}"
 
