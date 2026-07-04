@@ -41,6 +41,21 @@ If enabled (`true`), users can access Grafana with read permissions without logg
 
 The Grafana database, logs, and plugins are stored in the persistent add-on data directory (`/data/grafana`) and are preserved across restarts and updates.
 
+## Migrating from the hassio-addons Grafana add-on
+
+If you previously used the community [hassio-addons Grafana add-on](https://github.com/hassio-addons/addon-grafana), its data lives in that add-on's own private data directory (typically `/mnt/data/supervisor/addons/data/a0d7b954_grafana` on the host) and is **not** accessible to this add-on automatically — Home Assistant Supervisor add-ons are sandboxed from each other's private data by design, and this add-on cannot read it during startup.
+
+To migrate manually, before starting this add-on for the first time:
+
+1. Make sure the old hassio-addons Grafana add-on is stopped.
+2. Using the [Terminal & SSH add-on](https://github.com/hassio-addons/addon-ssh) (or another add-on with host filesystem access), copy the old data directory into this add-on's data directory:
+   ```sh
+   cp -a /mnt/data/supervisor/addons/data/a0d7b954_grafana/. /mnt/data/supervisor/addons/data/f7a88481_grafana/grafana/
+   ```
+   `f7a88481_grafana` is this add-on's data directory: Home Assistant derives it from the [ha-addons](https://github.com/bborchers/ha-addons) repository URL (first 8 hex characters of its SHA1 hash) followed by the add-on slug `grafana`. You can confirm it exists under `/mnt/data/supervisor/addons/data/`.
+3. Start this add-on. Grafana will pick up the existing database, dashboards, and plugins from `/data/grafana`.
+4. Once you've confirmed the migration worked, you can uninstall the old add-on.
+
 ## Support
 
 If you run into problems, please open an issue in the [build repository](https://github.com/bborchers/ha-addons-grafana).
