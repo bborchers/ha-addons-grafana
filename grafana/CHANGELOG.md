@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- Added missing changelog entry for 0.2.1 (no functional change)
+
 ## 0.2.1
 
 - Added missing changelog entries for 0.1.5 and 0.2.0 (no functional change)
