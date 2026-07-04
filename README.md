@@ -8,8 +8,11 @@ This repo automatically builds a multi-arch image on every published [release](h
 
 ## Release process
 
-1. Merge a PR (with label `major`, `minor`, or `patch`)
-2. [Release Drafter](.github/workflows/release-drafter.yml) automatically updates a draft release with the next version
-3. Publish the draft release → triggers build, GHCR push, and sync with `ha-addons`
+1. In your PR, add the [grafana/CHANGELOG.md](grafana/CHANGELOG.md) entry for the version this PR will produce — i.e. the current latest release bumped by the label you're about to apply (major/minor/patch)
+2. Merge the PR (with label `major`, `minor`, or `patch`)
+3. [Release Drafter](.github/workflows/release-drafter.yml) automatically updates a draft release with the next version
+4. Publish the draft release → triggers build, GHCR push, and sync with `ha-addons`
+
+**Do not add a changelog entry in a follow-up PR after the release.** Merging that follow-up PR triggers Release Drafter again for the *next* version, so the changelog permanently lags one version behind — always bump the changelog in the same PR as the change it describes.
 
 See [grafana/DOCS.md](grafana/DOCS.md) for the add-on documentation and [grafana/CHANGELOG.md](grafana/CHANGELOG.md) for the version history.
