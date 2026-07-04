@@ -37,6 +37,61 @@ Password for the initial Grafana administrator account. **Should be changed afte
 
 If enabled (`true`), users can access Grafana with read permissions without logging in. Default: `false`.
 
+### Option: `root_url`
+
+Sets `GF_SERVER_ROOT_URL`. The full URL used to access Grafana from a browser, e.g. `https://grafana.example.com/` or `https://homeassistant.local:3000/`. Useful when Grafana is reachable through a reverse proxy or a different hostname than the default. Optional, not set by default.
+
+### Option: `domain`
+
+Sets `GF_SERVER_DOMAIN`. The domain name Grafana is served from, e.g. `grafana.example.com`. Optional, not set by default.
+
+### SMTP options
+
+These options configure Grafana's built-in email sender (used for alert notifications, invites, and password resets). All fields except `smtp_enabled` are optional; only set the ones you need.
+
+```yaml
+smtp_enabled: true
+smtp_host: "smtp.example.com:587"
+smtp_user: "smtp-user"
+smtp_password: "a-secure-password"
+smtp_from_address: "grafana@example.com"
+smtp_from_name: "Grafana"
+smtp_skip_verify: false
+smtp_starttls_policy: "MandatoryStartTLS"
+```
+
+#### Option: `smtp_enabled`
+
+Sets `GF_SMTP_ENABLED`. Enables Grafana's SMTP email sender. Default: `false`.
+
+#### Option: `smtp_host`
+
+Sets `GF_SMTP_HOST`. The SMTP server address, including port, e.g. `smtp.example.com:587`.
+
+#### Option: `smtp_user`
+
+Sets `GF_SMTP_USER`. Username for SMTP authentication.
+
+#### Option: `smtp_password`
+
+Sets `GF_SMTP_PASSWORD`. Password for SMTP authentication.
+
+#### Option: `smtp_from_address`
+
+Sets `GF_SMTP_FROM_ADDRESS`. The email address used as the sender for outgoing emails.
+
+#### Option: `smtp_from_name`
+
+Sets `GF_SMTP_FROM_NAME`. The display name used as the sender for outgoing emails.
+
+#### Option: `smtp_skip_verify`
+
+Sets `GF_SMTP_SKIP_VERIFY`. If `true`, skips verification of the SMTP server's certificate chain and hostname. Only use this for trusted internal servers with self-signed certificates.
+
+#### Option: `smtp_starttls_policy`
+
+Sets `GF_SMTP_STARTTLS_POLICY`. Controls StartTLS behavior. Possible values: `OpportunisticStartTLS`, `MandatoryStartTLS`, `NoStartTLS`.
+
 ## Data
 
 The Grafana database, logs, and plugins are stored in the persistent add-on data directory (`/data/grafana`) and are preserved across restarts and updates.
