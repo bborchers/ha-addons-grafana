@@ -16,8 +16,19 @@ options:
   admin_user: "admin"
   admin_password: "admin"
   anonymous_access: false
+  smtp_enabled: false
 schema:
   log_level: list(debug|info|warn|error|critical)
   admin_user: str
   admin_password: password
   anonymous_access: bool
+  root_url: str?
+  domain: str?
+  smtp_enabled: bool
+  smtp_host: str?
+  smtp_user: str?
+  smtp_password: password?
+  smtp_from_address: str?
+  smtp_from_name: str?
+  smtp_skip_verify: bool?
+  smtp_starttls_policy: list(OpportunisticStartTLS|MandatoryStartTLS|NoStartTLS)?
