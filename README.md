@@ -1,6 +1,11 @@
 # ha-addons-grafana
 
 ![project stage](https://img.shields.io/badge/project%20stage-experimental-yellow)
+[![license](https://img.shields.io/github/license/bborchers/ha-addons-grafana)](LICENSE)
+![architectures](https://img.shields.io/badge/architectures-aarch64%20%7C%20amd64-blue)
+[![lint](https://github.com/bborchers/ha-addons-grafana/actions/workflows/lint.yml/badge.svg)](https://github.com/bborchers/ha-addons-grafana/actions/workflows/lint.yml)
+![maintenance](https://img.shields.io/maintenance/yes/2026)
+![commits](https://img.shields.io/github/commit-activity/t/bborchers/ha-addons-grafana)
 
 Build repo for the Grafana Home Assistant add-on.
 
