@@ -2,7 +2,7 @@
 
 ## 0.3.0
 
-- Added `translations/en.yaml` so the Home Assistant UI shows human-readable names and descriptions for every configuration option instead of the raw option key
+- Added `translations/en.yaml` and `translations/de.yaml` so the Home Assistant UI shows human-readable names and descriptions for every configuration option instead of the raw option key
 
 ## 0.2.3
 
