@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3
+
+- Documented that uninstalling always deletes the add-on's data directory, regardless of the "delete data" checkbox (Home Assistant Supervisor behavior), and how to recover via a backup
+
 ## 0.2.2
 
 - Added missing changelog entry for 0.2.1 (no functional change)
