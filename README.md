@@ -1,6 +1,10 @@
 # ha-addons-grafana
 
+![project stage](https://img.shields.io/badge/project%20stage-experimental-yellow)
+
 Build repo for the Grafana Home Assistant add-on.
+
+This add-on is in an early, experimental stage — expect rough edges and breaking changes between releases.
 
 This repo automatically builds a multi-arch image on every published [release](https://github.com/bborchers/ha-addons-grafana/releases) and pushes it to `ghcr.io/bborchers/ha-addons-grafana`. The central repository [ha-addons](https://github.com/bborchers/ha-addons) is then automatically notified of the new version.
 
