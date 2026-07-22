@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 # Grafana version (see build.yaml args, can be overridden per build)
-ARG GRAFANA_VERSION="13.1.0"
+ARG GRAFANA_VERSION="13.1.1"
 ARG BUILD_ARCH
 
 # Download and install Grafana OSS (musl build, matching the
