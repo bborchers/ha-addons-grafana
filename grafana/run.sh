@@ -24,6 +24,12 @@ export GF_SECURITY_ADMIN_USER="${ADMIN_USER}"
 export GF_SECURITY_ADMIN_PASSWORD="${ADMIN_PASSWORD}"
 export GF_AUTH_ANONYMOUS_ENABLED="${ANONYMOUS_ACCESS}"
 
+# Home Assistant ingress strips its path prefix before forwarding, so Grafana
+# serves from "/" but has to generate links containing the ingress entry.
+INGRESS_ENTRY=$(bashio::addon.ingress_entry)
+export GF_SERVER_ROOT_URL="%(protocol)s://%(domain)s:%(http_port)s${INGRESS_ENTRY}/"
+export GF_SERVER_SERVE_FROM_SUB_PATH="false"
+
 if bashio::config.has_value 'root_url'; then
     export GF_SERVER_ROOT_URL="$(bashio::config 'root_url')"
 fi
